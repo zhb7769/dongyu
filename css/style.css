@@ -1173,10 +1173,15 @@ a {
     padding: 40px 0;
 }
 
-.ind_about_c {
+.ind_aboutbg {
     width: 41%;
+    padding-bottom: 20px;
     position: relative;
     z-index: 10;
+}
+
+.ind_about_c {
+    width: 100%;
 }
 
 .ind_about_cpa .ind_pro_tit {
@@ -1222,16 +1227,17 @@ a {
 }
 
 .ind_about_cimg {
-    width: 100%;
+    width: 53%;
+    /*  width: 100%;
     text-align: right;
     position: absolute;
     right: 0;
     bottom: 0;
-    z-index: 1;
+    z-index: 1;*/
 }
 
     .ind_about_cimg img {
-        width: 53%;
+        width: 100%;
         display: inline-block;
         vertical-align: middle;
     }
@@ -2058,14 +2064,14 @@ a.news_lca:hover .news_lc_con {
 
 .abo_c .num {
     font-weight: bold;
-    font-size: 30px;
+    font-size: 20px;
     color: #003272;
     margin-top: 20px;
 }
 
 .abo_c .tit {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
     color: #000000;
     margin-top: 12px;
 }
@@ -2377,32 +2383,26 @@ a.news_lca:hover .news_lc_con {
             color: #FFFFFF;
         }
 
-.ind_aboutbg {
-    width: 100%;
-    padding-bottom: 20px;
-    position: relative;
-    overflow: hidden;
-}
-
 .ind_about .ind_tit {
     padding-bottom: 10px;
 }
 
 .ind_about .abo_con {
-    width: 90%;
+    width: 161%;
     max-width: 1600px;
     position: relative;
     z-index: 10;
     background: url(../images/ind_g1.png) no-repeat;
     background-size: 100% 100%;
-    background-color: rgba(255,255,255, 0.88);
-    margin-top: 30px;
+    background-color: rgba(255,255,255, 0.75);
+    margin-top: 40px;
     border: 0;
+    padding-right: 1%;
 }
 
 .ind_about .abo_c {
     width: 25%;
-    padding-left: 5%;
+    padding-left: 3%;
     border-left: 0;
     text-align: left;
 }

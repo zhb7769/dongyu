@@ -47,17 +47,18 @@
     </div>
     <!-- banner END -->
     <div class="ind_about">
-        <div class="ind_aboutbg">
-            <div class="main_bgc">
+        <div class="main_bgc f_flrb">
+            <div class="ind_aboutbg">
                 <div class="ind_about_c">
                     <div class="ind_tit wow bounceInLeft">关于东宇</div>
-                    <div class="ind_tits wow bounceInLeft"><asp:Literal ID="ltAboutSummary" runat="server"></asp:Literal></div>
+                    <div class="ind_tits wow bounceInLeft">
+                        <asp:Literal ID="ltAboutSummary" runat="server"></asp:Literal></div>
                     <div class="con">
                         <asp:Literal ID="ltAboutContent" runat="server"></asp:Literal>
                     </div>
                     <a href="About.aspx" class="ind_more">查看更多</a>
                 </div>
-                <div class="abo_con f_flra fw_w b_box b_box">
+                <div class="abo_con f_flra_nc fw_w b_box b_box">
                     <div class="abo_c b_box">
                         <div class="ico ico1"></div>
                         <div class="num">3</div>
