@@ -1,0 +1,31 @@
+# Build output
+PrecompiledWeb/
+bin/
+obj/
+*.dll
+*.pdb
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.cache
+
+# NuGet
+packages/
+
+# Upload files (local only)
+uploadfiles/
+
+# Local configuration with secrets (contains DB password)
+# Copy Web.config.example to Web.config and fill in real values
+Web.config
+Web.config.bak
+
+# OS files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Claude Code
+.claude/

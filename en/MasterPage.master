@@ -1,0 +1,136 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="EnMasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Dongyu Sanitary - Stainless Steel Solutions</title>
+    <link href="../css/style.css" rel="stylesheet" type="text/css" />
+    <link href="../css/base.css" rel="stylesheet" type="text/css" />
+    <link href="../css/animate.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <script type="text/javascript" src="../js/wow.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            var url = window.location.href;
+            if (url.indexOf('Index') >= 0) {
+                SetActiveItem("nav_a1");
+            } else if (url.indexOf("About") >= 0) {
+                SetActiveItem("nav_a2");
+            } else if (url.indexOf("Product") >= 0) {
+                SetActiveItem("nav_a3");
+            } else if (url.indexOf("Equipment") >= 0) {
+                SetActiveItem("nav_a4");
+            } else if (url.indexOf("News") >= 0) {
+                SetActiveItem("nav_a5");
+            } else if (url.indexOf("Contact") >= 0) {
+                SetActiveItem("nav_a6");
+            }
+        }
+        if (!document.getElementsByClassName) {
+            document.getElementsByClassName = function (className, element) {
+                var children = (element || document).getElementsByTagName('*');
+                var elements = new Array();
+                for (var i = 0; i < children.length; i++) {
+                    var child = children[i];
+                    var classNames = child.className.split(' ');
+                    for (var j = 0; j < classNames.length; j++) {
+                        if (classNames[j] == className) {
+                            elements.push(child);
+                            break;
+                        };
+                    };
+                };
+                return elements;
+            };
+        }
+        function SetActiveItem(id) {
+            var children = document.getElementsByClassName("n_nav")[0].getElementsByTagName("a");
+            for (var i = 0; i < children.length; i++) {
+                if (children[i].id == id) {
+                    children[i].classList.add("act");
+                } else {
+                    children[i].classList.remove("act");
+                };
+                if (children[i].className == "act") {
+                    children[i].parentElement.parentElement.parentElement.style = "display", "block";
+                };
+            }
+        }
+
+        wow = new WOW(
+            {
+                boxClass: 'wow',
+                animateClass: 'animated',
+                offset: 0,
+                mobile: true,
+                live: true
+            }
+        );
+        wow.init();
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="main_bg">
+            <div class="nav_bg">
+                <div class="nav_fix" id="nav_fix">
+                    <div class="main_bgc">
+                        <div class="w100b clearfix">
+                            <a href="Index.aspx" class="n_logo"></a>
+                            <div class="nav_fr mt_1">
+                                <a href="../Search.aspx" class="i_search"></a>
+                                <span class="i_s">|</span>
+                                <a href="javascript:switchLang('cn')" class="nav_frc">
+                                    <span class="ico1" title="中文版"></span>
+                                </a>
+                                <a href="javascript:switchLang('en')" class="nav_frc">
+                                    <span class="ico2" title="English"></span>
+                                </a>
+                            </div>
+                            <div class="n_nav">
+                                <ul>
+                                    <li><a href="Index.aspx" id="nav_a1"><span>Home</span></a></li>
+                                    <li class="n_li"><a href="javascript:void(0);" id="nav_a2"><span>About Dongyu</span></a>
+                                        <div class="n_nav_droplist">
+                                            <a href="About.aspx">Company Profile</a>
+                                            <a href="AboutBase.aspx">Production Base</a>
+                                            <a href="AboutCourse.aspx">Development History</a>
+                                        </div>
+                                    </li>
+                                    <li class="n_li"><a href="javascript:void(0)" id="nav_a3"><span>Products</span></a>
+                                        <div class="n_nav_droplist">
+                                            <asp:Repeater ID="rptNavProduct" runat="server">
+                                                <ItemTemplate>
+                                                    <a href='Product.aspx?id=<%# Eval("ID") %>'><%# Eval("EN_Name") %></a>
+                                                </ItemTemplate>
+                                            </asp:Repeater>
+                                        </div>
+                                    </li>
+                                    <li><a href="Equipment.aspx" id="nav_a4"><span>Process & Equipment</span></a></li>
+                                    <li><a href="NewsList.aspx" id="nav_a5"><span>News</span></a></li>
+                                    <li><a href="Contact.aspx" id="nav_a6"><span>Contact Us</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- content -->
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <!-- content END -->
+            <div class="footer_dbgc">
+                <div class="main_bgc">Copyright © <b class="ml5 mr5">Yuyao Dongyu Sanitary Products Co., Ltd.</b>   <a href="http://www.tz-media.cn/" target="_blank">Technical Support: Yuyao Tianzhi Advertising Media Co., Ltd.</a></div>
+            </div>
+        </div>
+        <div id="gotop" class="gotop"></div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<!--
+  ASP.NET application configuration.
+
+  This is a sanitized template. The real Web.config (which holds the
+  production DB password) is git-ignored and must NOT be committed.
+
+  To run locally:
+    1. Copy this file to Web.config
+    2. Replace YOUR_SERVER / YOUR_DB / YOUR_PASSWORD with real values
+-->
+
+<configuration>
+  <connectionStrings>
+    <add name="ConnectionString" connectionString="server=YOUR_SERVER;database=YOUR_DB;user id=sa;password=YOUR_PASSWORD;min pool size=5;max pool size=100;" providerName="System.Data.SqlClient" />
+  </connectionStrings>
+  <system.web>
+    <compilation debug="true" targetFramework="4.0" />
+	  <httpRuntime executionTimeout="800" maxRequestLength="409600" useFullyQualifiedRedirectUrl="false"/>
+  </system.web>
+  <appSettings>
+    <add key="FCKeditor:BasePath" value="~/FCKeditor.Net_2.6.3/fckeditor/"/>
+    <add key="FCKeditor:UserFilesPath" value="~/FCKeditor.Net_2.6.3/fckImages/"/>
+  </appSettings>
+  <system.webServer>
+    <httpRedirect enabled="false" />
+  </system.webServer>
+</configuration>
