@@ -101,7 +101,7 @@
                             <div class="ind_pro_c">
                                 <div class="title"><%# Eval("EN_Name") %></div>
                                 <div class="desc"><%# Eval("EN_Intro") %></div>
-                                <a href='Product.aspx?cid=<%# Eval("ID") %>' class="ind_more">Read More</a>
+                                <a href='Product.aspx?id=<%# Eval("ID") %>' class="ind_more">Read More</a>
                             </div>
                         </div>
                     </ItemTemplate>

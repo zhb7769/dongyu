@@ -101,7 +101,7 @@
                             <div class="ind_pro_c">
                                 <div class="title"><%# Eval("CN_Name") %></div>
                                 <div class="desc"><%# Eval("CN_Intro") %></div>
-                                <a href='Product.aspx?cid=<%# Eval("ID") %>' class="ind_more">查看更多</a>
+                                <a href='Product.aspx?id=<%# Eval("ID") %>' class="ind_more">查看更多</a>
                             </div>
                         </div>
                     </ItemTemplate>
