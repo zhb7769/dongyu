@@ -15,27 +15,27 @@
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <video muted loop playsinline preload="auto" class="ind_banner_swiper_con">
+                    <video muted playsinline preload="auto" class="ind_banner_swiper_con">
                         <source src="/images/1.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="swiper-slide">
-                    <video muted loop playsinline preload="auto" class="ind_banner_swiper_con">
+                    <video muted playsinline preload="auto" class="ind_banner_swiper_con">
                         <source src="/images/2.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="swiper-slide">
-                    <video muted loop playsinline preload="auto" class="ind_banner_swiper_con">
+                    <video muted playsinline preload="auto" class="ind_banner_swiper_con">
                         <source src="/images/3.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="swiper-slide">
-                    <video muted loop playsinline preload="auto" class="ind_banner_swiper_con">
+                    <video muted playsinline preload="auto" class="ind_banner_swiper_con">
                         <source src="/images/4.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="swiper-slide">
-                    <video muted loop playsinline preload="auto" class="ind_banner_swiper_con">
+                    <video muted playsinline preload="auto" class="ind_banner_swiper_con">
                         <source src="/images/5.mp4" type="video/mp4">
                     </video>
                 </div>
@@ -96,7 +96,7 @@
                     <ItemTemplate>
                         <div class="swiper-slide">
                             <div class="img_auto">
-                                <img src='<%# Eval("C_Pic") %>' alt="" />
+                                <img src='<%# string.IsNullOrEmpty(Eval("C_Pic").ToString()) ? "" : "/uploadfiles/productClass/" + Eval("C_Pic") %>' alt="" />
                             </div>
                             <div class="ind_pro_c">
                                 <div class="title"><%# Eval("CN_Name") %></div>
@@ -123,7 +123,7 @@
                                 <div class="news_la">
                                     <div class="w100b">
                                         <div class="news_limg equ_limg">
-                                            <img src='<%# Eval("Pic_Url") %>' alt="" />
+                                            <img src='<%# string.IsNullOrEmpty(Eval("Pic_Url").ToString()) ? "" : "/uploadfiles/article/" + Eval("Pic_Url") %>' alt="" />
                                         </div>
                                         <div class="news_lc">
                                             <div class="news_lca">
@@ -158,30 +158,24 @@
     <script type="text/javascript" src="js/slider.js"></script>
     <script type="text/javascript">
         //banner切换
+        // 视频按各自实际时长轮换：当前视频播放结束(ended)后自动切换到下一张
         var swiper = new Swiper('.mySwiper', {
-            autoplay: {
-                delay: 10000,
-                disableOnInteraction: false
-            },
             loop: true,
             speed: 1000,
             centeredSlides: true,
-            pagination: { el: '.swiper-pagination' },
             on: {
                 init() {
-                    let v = this.slides[this.activeIndex].querySelector('video');
-                    v && v.play();
+                    playCurrentVideo(this);
                 },
                 slideChange() {
                     let allV = document.querySelectorAll('.swiper-slide video');
-                    let currV = this.slides[this.activeIndex].querySelector('video');
                     // 全部暂停+回到起点
                     allV.forEach(item => {
                         item.pause();
                         item.currentTime = 0;
                     })
-                    // 当前视频从头播放
-                    currV && currV.play();
+                    // 当前视频从头播放，播放结束自动切到下一张
+                    playCurrentVideo(this);
                 }
             },
             pagination: {
@@ -193,6 +187,16 @@
                 prevEl: ".swiper-button-prev"
             }
         })
+        // 播放当前 slide 的视频，播放结束(ended)自动切到下一张
+        function playCurrentVideo(sw) {
+            let currV = sw.slides[sw.activeIndex].querySelector('video');
+            if (currV) {
+                currV.play();
+                currV.onended = function () {
+                    sw.slideNext();
+                };
+            }
+        }
         var swiper2 = new Swiper(".mySwiper2", {
             slidesPerView: "auto",
             centeredSlides: true,

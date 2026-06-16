@@ -198,24 +198,15 @@ public partial class Index : System.Web.UI.Page
 - 功能：产品管理、新闻管理、公司信息、文件上传
 - 富文本编辑：FCKeditor
 
-## 编译命令
-
-在项目根目录 `C:\project\dongyu` 下执行：
-
-```bash
-# 编译项目（注意：在 Git Bash 中使用双斜杠 // 转义 MSBuild 参数）
-"/c/Windows/Microsoft.NET/Framework/v4.0.30319/MSBuild.exe" dongyu.sln //t:Build //p:Configuration=Debug
-```
-
 ## 文件编码规范
 
-**所有 .aspx、.aspx.cs、.cs 文件必须使用以下编码格式：**
+**所有 .aspx、.aspx.cs、.cs 文件必须使用以下编码格式(如果本身是UTF-8 with BOM就不需要转换了)：**
 
 - **编码**：UTF-8 with BOM（带 BOM 头 `\xEF\xBB\xBF`）
 - **行尾符**：CRLF（`\r\n`，Windows 风格）
 
 > ⚠️ Write/Edit 工具默认输出 LF 行尾且不带 BOM，会导致 ASP.NET aspnet_compiler 报"服务器标记的格式不正确"错误。
-> 写完文件后需执行以下转换：
+> 写完文件后需执行以下转换(新建的文件才需要)：
 >
 > ```bash
 > # 转换单个文件为 UTF-8 BOM + CRLF

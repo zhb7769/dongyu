@@ -29,7 +29,7 @@
                                         <div class="news_la">
                                             <div class="w100b f_fl_nc">
                                                 <a href='NewsDetail.aspx?id=<%# Eval("ID") %>' class="news_limg">
-                                                    <img src='<%# Eval("Pic_Url") %>' alt="" />
+                                                    <img src='<%# string.IsNullOrEmpty(Eval("Pic_Url").ToString()) ? "" : "/uploadfiles/article/" + Eval("Pic_Url") %>' alt="" />
                                                 </a>
                                                 <div class="news_lc">
                                                     <a href='NewsDetail.aspx?id=<%# Eval("ID") %>' class="news_lca">

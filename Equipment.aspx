@@ -37,7 +37,7 @@
                                         <div class="news_la">
                                             <div class="w100b f_fl_nc">
                                                 <div class="news_limg equ_limg">
-                                                    <img src='<%# Eval("Pic_Url") %>' alt="" />
+                                                    <img src='<%# string.IsNullOrEmpty(Eval("Pic_Url").ToString()) ? "" : "/uploadfiles/article/" + Eval("Pic_Url") %>' alt="" />
                                                 </div>
                                                 <div class="news_lc">
                                                     <div class="news_lca">

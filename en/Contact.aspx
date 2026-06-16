@@ -13,17 +13,6 @@
         <div class="det_con">
             <div class="main_bgc">
                 <div class="det_cpa">
-                    <div class="det_tit">Domestic Business Division</div>
-                    <div class="det_c">
-                        <asp:Literal ID="ltCNContent" runat="server" Mode="PassThrough"></asp:Literal>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="det_con bg_gray">
-            <div class="main_bgc">
-                <div class="det_cpa">
-                    <div class="det_tit">Overseas Business Division</div>
                     <div class="det_c">
                         <asp:Literal ID="ltENContent" runat="server" Mode="PassThrough"></asp:Literal>
                     </div>

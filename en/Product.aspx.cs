@@ -59,7 +59,7 @@ public partial class EnProduct : System.Web.UI.Page
         StringBuilder strSql = new StringBuilder();
         strSql.Append("SELECT t2.pro_img, t1.EN_Name FROM Product t1 ");
         strSql.Append("INNER JOIN pro_att_info t2 ON t1.P_Id = t2.pro_id ");
-        strSql.Append("WHERE t1.ClassId IN (SELECT ID FROM f_ProductNum(@ClassId)) ");
+        strSql.Append("WHERE t1.ClassId = @ClassId ");
         strSql.Append("ORDER BY t1.Sort ASC, t2.at_id ASC");
 
         System.Data.SqlClient.SqlParameter[] parameters = {

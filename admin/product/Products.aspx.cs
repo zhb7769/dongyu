@@ -52,7 +52,7 @@ public partial class admin_product_Products : System.Web.UI.Page
     }
     private void Bind()
     {
-        string strWhere = " and IsTop=0 ";
+        string strWhere = "";
 
         if (!string.IsNullOrEmpty(txtKeyWords.Text))
         {

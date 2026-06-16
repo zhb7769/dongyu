@@ -29,7 +29,7 @@ public partial class EnIndex : System.Web.UI.Page
             ltAboutContent.Text = model.EN_Content;
             if (!string.IsNullOrEmpty(model.Pic_Url))
             {
-                imgAbout.ImageUrl = model.Pic_Url;
+                imgAbout.ImageUrl = "/uploadfiles/article/" + model.Pic_Url;
             }
         }
     }
@@ -40,7 +40,7 @@ public partial class EnIndex : System.Web.UI.Page
     private void BindProductClass()
     {
         NetWise.DataAccess.ProductClass dal = new NetWise.DataAccess.ProductClass();
-        DataSet ds = dal.GetList(0, "", "Sort asc");
+        DataSet ds = dal.GetList(0, "ParentId='0'", "Sort asc");
         if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
         {
             rptProductClass.DataSource = ds;

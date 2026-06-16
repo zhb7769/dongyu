@@ -22,9 +22,7 @@ public partial class EnContact : System.Web.UI.Page
         NetWise.Entity.Article model = dal.GetModel(ContactArticleId);
         if (model != null)
         {
-            // Domestic Business Division (rich text block)
-            ltCNContent.Text = model.CN_Content;
-            // Overseas Business Division (rich text block)
+            // Contact content (English)
             ltENContent.Text = model.EN_Content;
         }
     }

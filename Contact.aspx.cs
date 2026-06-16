@@ -22,10 +22,8 @@ public partial class Contact : System.Web.UI.Page
         NetWise.Entity.Article model = dal.GetModel(ContactArticleId);
         if (model != null)
         {
-            // 国内事业部（整块富文本）
+            // 联系我们内容（中文）
             ltCNContent.Text = model.CN_Content;
-            // 海外事业部（整块富文本）
-            ltENContent.Text = model.EN_Content;
         }
     }
 }
