@@ -43,8 +43,8 @@ namespace NetWise.DataAccess
             strSql.Append(";select @@IDENTITY");
             SqlParameter[] parameters = {
                     new SqlParameter("@NewsClassId", SqlDbType.Int,4),
-                    new SqlParameter("@CN_Title", SqlDbType.NVarChar,50),
-                    new SqlParameter("@EN_Title", SqlDbType.NVarChar,50),
+                    new SqlParameter("@CN_Title", SqlDbType.NVarChar,500),
+                    new SqlParameter("@EN_Title", SqlDbType.NVarChar,500),
                     new SqlParameter("@CN_KeyWords", SqlDbType.NVarChar,200),
                     new SqlParameter("@EN_KeyWords", SqlDbType.NVarChar,200),
                     new SqlParameter("@Pic_Url", SqlDbType.NVarChar,200),
@@ -105,8 +105,8 @@ namespace NetWise.DataAccess
             strSql.Append(" where ID=@ID");
             SqlParameter[] parameters = {
                     new SqlParameter("@NewsClassId", SqlDbType.Int,4),
-                    new SqlParameter("@CN_Title", SqlDbType.NVarChar,50),
-                    new SqlParameter("@EN_Title", SqlDbType.NVarChar,50),
+                    new SqlParameter("@CN_Title", SqlDbType.NVarChar,500),
+                    new SqlParameter("@EN_Title", SqlDbType.NVarChar,500),
                     new SqlParameter("@CN_KeyWords", SqlDbType.NVarChar,200),
                     new SqlParameter("@EN_KeyWords", SqlDbType.NVarChar,200),
                     new SqlParameter("@Pic_Url", SqlDbType.NVarChar,200),
