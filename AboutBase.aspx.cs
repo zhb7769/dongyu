@@ -36,4 +36,13 @@ public partial class AboutBase : System.Web.UI.Page
             rptBase.DataBind();
         }
     }
+
+
+    protected string GetLogo(string title)
+    {
+        if (title.Contains("东诚"))
+            return "images/logo_dc.png";
+
+        return "images/logo2.png";
+    }
 }

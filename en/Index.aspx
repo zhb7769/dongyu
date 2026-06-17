@@ -129,7 +129,7 @@
                                             <div class="news_lca">
                                                 <div class="abob_tit f_fl_nc">
                                                     <div class="abob_logo img_auto">
-                                                        <img src="../images/logo2.png" alt="" />
+                                                        <img src='<%# GetLogo(Eval("CN_Title").ToString()) %>' alt="" />
                                                     </div>
                                                     <div class="title">
                                                         <div class="tit"><%# Eval("EN_Title") %></div>
