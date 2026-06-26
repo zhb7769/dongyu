@@ -114,7 +114,7 @@
                                         </div>
                                     </li>
                                     <li><a href="Equipment.aspx" id="nav_a4"><span>Process & Equipment</span></a></li>
-                                    <li><a href="NewsList.aspx" id="nav_a5"><span>information center</span></a></li>
+                                    <li><a href="NewsList.aspx" id="nav_a5"><span>Information Center</span></a></li>
                                     <li><a href="Contact.aspx" id="nav_a6"><span>Contact Us</span></a></li>
                                 </ul>
                             </div>

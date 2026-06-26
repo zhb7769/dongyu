@@ -6,8 +6,8 @@
     <div class="det_pb">
         <div class="all_ban top_contact">
             <div class="main_bgc">
-                <div class="tit wow bounceInLeft animated">News</div>
-                <div class="all_bantit"><a href="Index.aspx">Home</a><i>></i><a href="NewsList.aspx">News</a><i>></i><span>News Detail</span></div>
+                <div class="tit wow bounceInLeft animated">Information Center</div>
+                <div class="all_bantit"><a href="Index.aspx">Home</a><i>></i><a href="NewsList.aspx">Information Center</a><i>></i><span>Information Detail</span></div>
             </div>
         </div>
         <div class="det_con">

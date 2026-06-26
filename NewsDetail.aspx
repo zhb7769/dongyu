@@ -6,8 +6,8 @@
     <div class="det_pb">
         <div class="all_ban top_contact">
             <div class="main_bgc">
-                <div class="tit wow bounceInLeft animated">新闻动态</div>
-                <div class="all_bantit"><a href="Index.aspx">首页</a><i>></i><a href="NewsList.aspx">新闻动态</a><i>></i><span>新闻详情</span></div>
+                <div class="tit wow bounceInLeft animated">资讯中心</div>
+                <div class="all_bantit"><a href="Index.aspx">首页</a><i>></i><a href="NewsList.aspx">资讯中心</a><i>></i><span>资讯详情</span></div>
             </div>
         </div>
         <div class="det_con">
