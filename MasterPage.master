@@ -114,7 +114,7 @@
                                         </div>
                                     </li>
                                     <li><a href="Equipment.aspx" id="nav_a4"><span>工艺及设备</span></a></li>
-                                    <li><a href="NewsList.aspx" id="nav_a5"><span>新闻动态</span></a></li>
+                                    <li><a href="NewsList.aspx" id="nav_a5"><span>资讯中心</span></a></li>
                                     <li><a href="Contact.aspx" id="nav_a6"><span>联系我们</span></a></li>
                                 </ul>
                             </div>

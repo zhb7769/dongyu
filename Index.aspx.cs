@@ -54,7 +54,7 @@ public partial class Index : System.Web.UI.Page
     private void BindBase()
     {
         NetWise.DataAccess.Article dal = new NetWise.DataAccess.Article();
-        DataSet ds = dal.GetList(0, " and ArticleClassId=2", "Sort asc");
+        DataSet ds = dal.GetList(0, " and ArticleClassId=10", "Sort asc");
         if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
         {
             rptBase.DataSource = ds;
@@ -66,6 +66,8 @@ public partial class Index : System.Web.UI.Page
     {
         if (title.Contains("东诚"))
             return "images/logo_dc.png";
+        if (title.Contains("东锋"))
+            return "images/logo_df.png";
 
         return "images/logo2.png";
     }

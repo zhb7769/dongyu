@@ -42,6 +42,8 @@ public partial class AboutBase : System.Web.UI.Page
     {
         if (title.Contains("东诚"))
             return "images/logo_dc.png";
+        if (title.Contains("东锋"))
+            return "images/logo_df.png";
 
         return "images/logo2.png";
     }

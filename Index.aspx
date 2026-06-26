@@ -120,7 +120,7 @@
                     <asp:Repeater ID="rptBase" runat="server">
                         <ItemTemplate>
                             <li>
-                                <div class="news_la">
+                                <a href="AboutBase.aspx" class="news_la">
                                     <div class="w100b">
                                         <div class="news_limg equ_limg">
                                             <img src='<%# string.IsNullOrEmpty(Eval("Pic_Url").ToString()) ? "" : "/uploadfiles/article/" + Eval("Pic_Url") %>' alt="" />
@@ -142,7 +142,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </a>
                             </li>
                         </ItemTemplate>
                     </asp:Repeater>
